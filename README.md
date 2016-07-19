@@ -88,3 +88,98 @@ Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/
 |fetchParams         |object              |optional  |-           | -         |表格在请求数据时，会额外附带的参数，具有最高的优先级|
 |actionBar           |object/array        |optional  |null        | -         |表格内置的操作条配置，详细[见此](#actionbar)|
 |onFetchError        |function(result)    |optional  |noop        | -         |在返回数据中 success 不是 true 的情况下触发，返回所有请求得到的数据|
+
+## 返回的数据格式
+
+* 数据格式的约定[见此](http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18) 
+
+```javascript
+   {
+    "content":{
+        "data":[
+            {   
+                "id":'1'
+                "grade":"grade1",
+                "email":"email1",
+                "firstName":"firstName1",
+                "lastName":"lastName1",
+                "birthDate":"birthDate1",
+                "country":"country1",
+                "city":"city1"
+            }
+            ...
+    
+        ],
+        "currentPage":1,
+        "totalCount":30
+    },
+    "success": true,
+    "errorCode": "",
+    "errorMsg": ""
+    }
+
+```
+
+> 上面的数据格式是 ajax 返回的数据格式要求，如果你通过 jsxdata 传值，只需要 content 里面的内容。
+
+```javascript
+{
+    "data":[
+        {   
+            "id":'1'
+            "grade":"grade1",
+            "email":"email1",
+            "firstName":"firstName1",
+            "lastName":"lastName1",
+            "birthDate":"birthDate1",
+            "country":"country1",
+            "city":"city1"
+        }
+        ...
+
+    ],
+    "currentPage":1,
+    "totalCount":30
+}
+```
+
+### ActionBar 配置的例子
+
+```javascript
+
+// actionBar 支持传入一个对象
+actionBar: {
+    "新增行": () => { // 点击回调
+        me.refs.grid.addEmptyRow();
+    },
+    "编辑所有行": () => {
+        me.refs.grid.editAllRow();
+    }
+}
+
+// 或者定制能力更加强大的数组
+actionBar: [
+    {
+        title: '新增行', // 显示名称
+        callback: () => { // 点击回调
+            me.refs.grid.addEmptyRow();
+        },
+        render: (title) => { // 定制渲染
+            return <Button>{title}</Button>
+        }
+    },
+    {
+        title: "编辑所有行",
+        callback: () => {
+            me.refs.grid.editAllRow();
+        }
+    },
+    {
+        title: "保存所有行",
+        callback: () => {
+            me.refs.grid.saveAllRow();
+        }
+    }
+    
+]
+```
