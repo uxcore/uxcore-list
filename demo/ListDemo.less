@@ -1,0 +1,46 @@
+/**
+ * List Component Demo Style for Uxcore
+ * @author eternalsky
+ *
+ * Copyright 2015-2016, Uxcore Team, Alinw.
+ * All rights reserved.
+ */
+
+@import "../node_modules/kuma-base/theme/orange";
+@import "../src/List.less";
+
+.demo {
+    .list-label,
+    .list-content {
+        display: inline-block;
+        line-height: 18px;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    .list-group {
+        padding: 20px 0px 20px 25px;
+    }
+    .list-header {
+        position: relative;
+        .list-title {
+            height: 55px;
+            line-height: 55px;
+            background-color: #fafafa;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .list-button-group {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+    }
+    .list-label {
+        width: 65px;
+        color: #999;
+    }
+    .list-link {
+        margin-right: 30px;
+    }
+}
