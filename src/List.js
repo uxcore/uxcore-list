@@ -106,7 +106,7 @@ class List extends React.Component {
         url: fetchUrl,
         data: beforeFetch(fetchData, from),
         fit: (response) => fitResponse(response),
-        processData: me.processData,
+        process: me.processData,
         jsonp: isJsonp,
       });
       me.fetch().then((content) => {
