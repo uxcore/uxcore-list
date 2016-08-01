@@ -97,7 +97,7 @@ class List extends React.Component {
     const { data, pageSize, searchTxt } = me.state;
     const isJsonp = me.props.isJsonp === undefined ? /\.jsonp/.test(fetchUrl) : me.props.isJsonp;
     const fetchData = assign({
-      currentPage: data.currentPage,
+      currentPage: data.currentPage || 1,
       pageSize,
       searchTxt,
     }, fetchParams);
