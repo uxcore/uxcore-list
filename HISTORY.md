@@ -1,5 +1,10 @@
 # history
 
+## 0.1.5
+
+* `CHANGED` replace deepcopy with lodash/cloneDeep
+* `FIXED` setState may be triggered in componentWillMount
+
 ## 0.1.4
 
 * `FIXED` add currentPage default value

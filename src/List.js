@@ -9,11 +9,12 @@ const React = require('react');
 const ActionBar = require('./ActionBar');
 const ListCore = require('./ListCore');
 const Pagination = require('uxcore-pagination');
-const deepcopy = require('deepcopy');
+const deepcopy = require('lodash/cloneDeep');
 const deepEqual = require('deep-equal');
 const NattyFetch = require('natty-fetch');
 const assign = require('object-assign');
 const classnames = require('classnames');
+const Promise = require('lie');
 
 class List extends React.Component {
 
@@ -30,7 +31,7 @@ class List extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetchData();
   }
 
@@ -108,6 +109,7 @@ class List extends React.Component {
         fit: (response) => fitResponse(response),
         process: me.processData,
         jsonp: isJsonp,
+        Promise,
       });
       me.fetch().then((content) => {
         me.setState({
