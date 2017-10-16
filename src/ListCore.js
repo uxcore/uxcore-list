@@ -6,6 +6,7 @@
  * All rights reserved.
  */
 const React = require('react');
+const PropTypes = require('prop-types');
 const i18n = require('./i18n');
 class ListCore extends React.Component {
 
@@ -49,9 +50,9 @@ ListCore.defaultProps = {
 
 // http://facebook.github.io/react/docs/reusable-components.html
 ListCore.propTypes = {
-  prefixCls: React.PropTypes.string,
-  data: React.PropTypes.array,
-  renderItem: React.PropTypes.func,
+  prefixCls: PropTypes.string,
+  data: PropTypes.array,
+  renderItem: PropTypes.func,
 };
 
 ListCore.displayName = 'ListCore';

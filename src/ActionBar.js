@@ -5,7 +5,7 @@
  * Copyright 2014-2015, UXCore Team, Alinw.
  * All rights reserved.
  */
-
+const PropTypes = require('prop-types');
 const SearchBar = require('./SearchBar');
 const classnames = require('classnames');
 const Button = require('uxcore-button');
@@ -83,8 +83,8 @@ class ActionBar extends React.Component {
 }
 
 ActionBar.propTypes = {
-  showSearch: React.PropTypes.bool,
-  onSearch: React.PropTypes.func,
+  showSearch: PropTypes.bool,
+  onSearch: PropTypes.func,
 };
 
 ActionBar.defaultProps = {

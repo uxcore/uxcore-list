@@ -7,6 +7,7 @@
  */
 
 const React = require('react');
+const PropTypes = require('prop-types');
 
 class SearchBar extends React.Component {
 
@@ -56,8 +57,8 @@ class SearchBar extends React.Component {
 }
 
 SearchBar.propTypes = {
-  prefixCls: React.PropTypes.string,
-  onSearch: React.PropTypes.func,
+  prefixCls: PropTypes.string,
+  onSearch: PropTypes.func,
 };
 
 SearchBar.defaultProps = {
