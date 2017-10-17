@@ -6,8 +6,9 @@
  * All rights reserved.
  */
 
-const React = require('react');
-const PropTypes = require('prop-types');
+import React from 'react';
+
+import PropTypes from 'prop-types';
 
 class SearchBar extends React.Component {
 
@@ -66,4 +67,4 @@ SearchBar.defaultProps = {
   onSearch: () => {},
 };
 
-module.exports = SearchBar;
+export default SearchBar;

@@ -5,11 +5,12 @@
  * Copyright 2014-2015, UXCore Team, Alinw.
  * All rights reserved.
  */
-const PropTypes = require('prop-types');
-const SearchBar = require('./SearchBar');
-const classnames = require('classnames');
-const Button = require('uxcore-button');
-const React = require('react');
+import PropTypes from 'prop-types';
+
+import SearchBar from './SearchBar';
+import classnames from 'classnames';
+import Button from 'uxcore-button';
+import React from 'react';
 
 class ActionBar extends React.Component {
 
@@ -91,4 +92,4 @@ ActionBar.defaultProps = {
   prefixCls: 'kuma-list-actionbar',
 };
 
-module.exports = ActionBar;
+export default ActionBar;

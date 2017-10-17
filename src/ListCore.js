@@ -5,9 +5,10 @@
  * Copyright 2015-2016, Uxcore Team, Alinw.
  * All rights reserved.
  */
-const React = require('react');
-const PropTypes = require('prop-types');
-const i18n = require('./i18n');
+import React from 'react';
+
+import PropTypes from 'prop-types';
+import i18n from './i18n';
 class ListCore extends React.Component {
 
   constructor(props) {
@@ -57,4 +58,4 @@ ListCore.propTypes = {
 
 ListCore.displayName = 'ListCore';
 
-module.exports = ListCore;
+export default ListCore;
