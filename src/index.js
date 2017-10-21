@@ -6,4 +6,4 @@
  * All rights reserved.
  */
 
-export default require('./List');
+export default from './List';

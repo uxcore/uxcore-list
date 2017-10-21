@@ -12,7 +12,7 @@ import ActionBar from './ActionBar';
 import ListCore from './ListCore';
 import Pagination from 'uxcore-pagination';
 import deepcopy from 'lodash/cloneDeep';
-import _ from 'lodash';
+import isEqual from 'lodash/isEqual';
 import NattyFetch from 'natty-fetch';
 import assign from 'object-assign';
 import classnames from 'classnames';
@@ -39,7 +39,7 @@ class List extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const newState = {};
-    if (!_.isEqual(nextProps.data, this.data)) {
+    if (!isEqual.isEqual(nextProps.data, this.data)) {
       this.data = deepcopy(nextProps.data);
       newState.data = this.data;
     }
