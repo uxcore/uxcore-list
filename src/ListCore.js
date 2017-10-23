@@ -5,8 +5,10 @@
  * Copyright 2015-2016, Uxcore Team, Alinw.
  * All rights reserved.
  */
-const React = require('react');
-const i18n = require('./i18n');
+import React from 'react';
+
+import PropTypes from 'prop-types';
+import i18n from './i18n';
 class ListCore extends React.Component {
 
   constructor(props) {
@@ -49,11 +51,11 @@ ListCore.defaultProps = {
 
 // http://facebook.github.io/react/docs/reusable-components.html
 ListCore.propTypes = {
-  prefixCls: React.PropTypes.string,
-  data: React.PropTypes.array,
-  renderItem: React.PropTypes.func,
+  prefixCls: PropTypes.string,
+  data: PropTypes.array,
+  renderItem: PropTypes.func,
 };
 
 ListCore.displayName = 'ListCore';
 
-module.exports = ListCore;
+export default ListCore;

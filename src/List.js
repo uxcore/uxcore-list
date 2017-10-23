@@ -5,16 +5,18 @@
  * Copyright 2015-2016, Uxcore Team, Alinw.
  * All rights reserved.
  */
-const React = require('react');
-const ActionBar = require('./ActionBar');
-const ListCore = require('./ListCore');
-const Pagination = require('uxcore-pagination');
-const deepcopy = require('lodash/cloneDeep');
-const deepEqual = require('deep-equal');
-const NattyFetch = require('natty-fetch');
-const assign = require('object-assign');
-const classnames = require('classnames');
-const Promise = require('lie');
+import React from 'react';
+
+import PropTypes from 'prop-types';
+import ActionBar from './ActionBar';
+import ListCore from './ListCore';
+import Pagination from 'uxcore-pagination';
+import deepcopy from 'lodash/cloneDeep';
+import isEqual from 'lodash/isEqual';
+import NattyFetch from 'natty-fetch';
+import assign from 'object-assign';
+import classnames from 'classnames';
+import Promise from 'lie';
 
 class List extends React.Component {
 
@@ -37,7 +39,7 @@ class List extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const newState = {};
-    if (!deepEqual(nextProps.data, this.data)) {
+    if (!isEqual.isEqual(nextProps.data, this.data)) {
       this.data = deepcopy(nextProps.data);
       newState.data = this.data;
     }
@@ -228,39 +230,39 @@ List.defaultProps = {
 
 // http://facebook.github.io/react/docs/reusable-components.html
 List.propTypes = {
-  prefixCls: React.PropTypes.string,
-  className: React.PropTypes.string,
-  locale: React.PropTypes.string,
-  emptyText: React.PropTypes.string,
-  fetchUrl: React.PropTypes.string,
-  fetchParams: React.PropTypes.object,
-  searchBarPlaceholder: React.PropTypes.string,
-  data: React.PropTypes.object,
-  renderItem: React.PropTypes.func,
-  fitResponse: React.PropTypes.func,
-  beforeFetch: React.PropTypes.func,
-  processData: React.PropTypes.func,
-  onFetchError: React.PropTypes.func,
-  isJsonp: React.PropTypes.bool,
-  showSearch: React.PropTypes.bool,
-  showPager: React.PropTypes.bool,
-  showPagerTotal: React.PropTypes.bool,
-  pagerSizeOptions: React.PropTypes.array,
-  pageSize: React.PropTypes.number,
-  width: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
+  prefixCls: PropTypes.string,
+  className: PropTypes.string,
+  locale: PropTypes.string,
+  emptyText: PropTypes.string,
+  fetchUrl: PropTypes.string,
+  fetchParams: PropTypes.object,
+  searchBarPlaceholder: PropTypes.string,
+  data: PropTypes.object,
+  renderItem: PropTypes.func,
+  fitResponse: PropTypes.func,
+  beforeFetch: PropTypes.func,
+  processData: PropTypes.func,
+  onFetchError: PropTypes.func,
+  isJsonp: PropTypes.bool,
+  showSearch: PropTypes.bool,
+  showPager: PropTypes.bool,
+  showPagerTotal: PropTypes.bool,
+  pagerSizeOptions: PropTypes.array,
+  pageSize: PropTypes.number,
+  width: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
   ]),
-  height: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number,
+  height: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
   ]),
-  actionBar: React.PropTypes.oneOfType([
-    React.PropTypes.array,
-    React.PropTypes.object,
+  actionBar: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
   ]),
 };
 
 List.displayName = 'List';
 
-module.exports = List;
+export default List;

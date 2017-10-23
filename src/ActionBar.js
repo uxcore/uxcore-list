@@ -5,11 +5,12 @@
  * Copyright 2014-2015, UXCore Team, Alinw.
  * All rights reserved.
  */
+import PropTypes from 'prop-types';
 
-const SearchBar = require('./SearchBar');
-const classnames = require('classnames');
-const Button = require('uxcore-button');
-const React = require('react');
+import SearchBar from './SearchBar';
+import classnames from 'classnames';
+import Button from 'uxcore-button';
+import React from 'react';
 
 class ActionBar extends React.Component {
 
@@ -83,12 +84,12 @@ class ActionBar extends React.Component {
 }
 
 ActionBar.propTypes = {
-  showSearch: React.PropTypes.bool,
-  onSearch: React.PropTypes.func,
+  showSearch: PropTypes.bool,
+  onSearch: PropTypes.func,
 };
 
 ActionBar.defaultProps = {
   prefixCls: 'kuma-list-actionbar',
 };
 
-module.exports = ActionBar;
+export default ActionBar;
