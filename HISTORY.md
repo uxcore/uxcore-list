@@ -1,5 +1,8 @@
 # history
 
+## 0.1.6
+
+* `CHANGED` update to react 15.x
 ## 0.1.5
 
 * `CHANGED` replace deepcopy with lodash/cloneDeep
@@ -11,7 +14,7 @@
 
 ## 0.1.3
 
-* `FIXED` fix processData bug 
+* `FIXED` fix processData bug
 
 ## 0.1.2
 
