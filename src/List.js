@@ -39,7 +39,7 @@ class List extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const newState = {};
-    if (!isEqual.isEqual(nextProps.data, this.data)) {
+    if (!isEqual(nextProps.data, this.data)) {
       this.data = deepcopy(nextProps.data);
       newState.data = this.data;
     }
