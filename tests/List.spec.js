@@ -63,6 +63,7 @@ describe('List', () => {
     expect(w.props().width).to.equal('auto');
     w.setProps({ width: 1000 });
     expect(w.props().width).to.equal(1000);
+    w.unmount();
   });
 
   it('reder with props', () => {
@@ -75,15 +76,26 @@ describe('List', () => {
       data: [{ a: 1 }],
     });
     expect(w.props().pageSize).to.equal(20);
+    w.unmount();
   });
   it('reder with lifecyles unmount', () => {
     const w = getList({});
     w.setProps({ actionBar: barTest });
     w.unmount();
     expect(w.props().actionBar).to.equal(undefined);
+    w.unmount();
   });
   it('render search', () => {
     const w = getList({ fetchUrl });
     expect(w.props().fetchUrl).to.equal(fetchUrl);
+    const j = w.find('.kuma-input');
+    j.simulate('keydown',{ keyCode: 13 });
+    w.unmount();
+  });
+  it('render pagesize change', () => {
+    const w = getList({ fetchUrl });
+    w.instance().handlePagerSizeChange(2, 15);
+    w.instance().handlePagerChange(1);
+    w.unmount();
   });
 });
