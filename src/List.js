@@ -19,7 +19,6 @@ import classnames from 'classnames';
 import Promise from 'lie';
 
 class List extends React.Component {
-
   constructor(props) {
     super(props);
     this.data = deepcopy(props.data);
@@ -108,7 +107,7 @@ class List extends React.Component {
       me.fetch = NattyFetch.create({
         url: fetchUrl,
         data: beforeFetch(fetchData, from),
-        fit: (response) => fitResponse(response),
+        fit: response => fitResponse(response),
         process: me.processData,
         jsonp: isJsonp,
         Promise,
@@ -126,9 +125,9 @@ class List extends React.Component {
   renderActionBar() {
     const me = this;
     const {
-        showSearch,
-        actionBar,
-        searchBarPlaceholder,
+      showSearch,
+      actionBar,
+      searchBarPlaceholder,
     } = me.props;
     const actionBarProps = {
       onSearch: this.handleActionBarSearch,
@@ -219,9 +218,9 @@ List.defaultProps = {
   pagerSizeOptions: [10, 20, 30, 40],
   data: {},
   renderItem: () => {},
-  fitResponse: (response) => response,
-  beforeFetch: (data) => data,
-  processData: (data) => data,
+  fitResponse: response => response,
+  beforeFetch: data => data,
+  processData: data => data,
   onFetchError: (err) => { console.error(err.stack); },
   width: 'auto',
   height: 'auto',

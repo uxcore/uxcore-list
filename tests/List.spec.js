@@ -2,7 +2,7 @@ import expect from 'expect.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import List from '../src';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import { assign } from 'lodash';
 import Enzyme, { mount } from 'enzyme';
 import mockData from '../demo/data.js';

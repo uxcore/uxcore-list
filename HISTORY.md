@@ -1,5 +1,7 @@
 # history
+## 0.1.7
 
+* `CHANGED` update to react 16.x
 ## 0.1.6
 
 * `CHANGED` update to react 15.x
