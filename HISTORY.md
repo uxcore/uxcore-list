@@ -1,4 +1,7 @@
 # history
+## 0.1.8
+
+* `CHANGED` support js style export
 ## 0.1.7
 
 * `CHANGED` update to react 16.x
